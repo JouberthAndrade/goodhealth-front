@@ -25,38 +25,17 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr *ngFor="let item of model" >
       <td>
-        <strong>Jouberth</strong> <br>
-        <small>jobimbh@gmail.com</small>
+        <strong>{{item.nome}}</strong> <br>
+        <small>{{item.email}}</small>
       </td>
-      <td>Framework</td>
+      <td>{{item.empresa}}</td>
       <td>
         <a [routerLink]="[1, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
         <a (click)="alert('Exluir')" class="btn btn-outline-danger btn-sm">Excluir</a>
       </td>
     </tr>
-        <tr>
-      <td>
-        <strong>Jouberth</strong> <br>
-        <small>jobimbh@gmail.com</small>
-      </td>
-      <td>Framework</td>
-      <td>
-        <a [routerLink]="[1, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
-        <a (click)="alert('Excluir')" class="btn btn-outline-danger btn-sm">Excluir</a>
-      </td>
-    </tr>
-        <tr>
-      <td>
-        <strong>Jouberth</strong> <br>
-        <small>jobimbh@gmail.com</small>
-      </td>
-      <td>Framework</td>
-      <td>
-        <a [routerLink]="[1, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
-        <a (click)="alert('Excluir')" class="btn btn-outline-danger btn-sm">Excluir</a>
-      </td>
-    </tr>
+    
   </tbody>
 </table>
