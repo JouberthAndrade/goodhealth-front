@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule} from '@angular/forms';
 
 import { UsuariosRoutingModule } from './usuarios-routing.module';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
@@ -11,7 +12,8 @@ import {UsuarioService} from './service/usuario.service';
   declarations: [ListaUsuariosComponent, UsuariosFormComponent],
   imports: [
     CommonModule,
-    UsuariosRoutingModule
+    UsuariosRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
       UsuarioService,

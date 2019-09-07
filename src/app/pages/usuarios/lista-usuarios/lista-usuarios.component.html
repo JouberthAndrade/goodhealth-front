@@ -27,13 +27,14 @@
   <tbody>
     <tr *ngFor="let item of model" >
       <td>
+        <span *ngIf="!item.ativo">*</span>
         <strong>{{item.nome}}</strong> <br>
         <small>{{item.email}}</small>
       </td>
       <td>{{item.empresa}}</td>
       <td>
-        <a [routerLink]="[1, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
-        <a (click)="alert('Exluir')" class="btn btn-outline-danger btn-sm">Excluir</a>
+        <a [routerLink]="[item.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
+        <a (click)="deleteUser(item)" class="btn btn-outline-danger btn-sm">Excluir</a>
       </td>
     </tr>
     

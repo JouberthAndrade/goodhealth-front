@@ -1,3 +1,51 @@
-<p>
-  usuarios-form works!
-</p>
+<nav class="mb-5">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+    <li class="breadcrumb-item"><a routerLink="/usuarios">Usuários</a></li>
+    <li class="breadcrumb-item active">Form</li>
+  </ol>
+</nav>
+
+<div class="row mb-3">
+  <div class="col-md">
+    <h1 class="h2 border-left pl-2">
+      {{currentAction}}
+    </h1>
+  </div>
+  <div class="col-md">
+    <a routerLink="/usuarios" class="btn btn-light float-right"> << Voltar </a>
+  </div>
+</div>
+
+<form [formGroup]="usuarioForm" (submit)='submitForm()'>
+  <div class="card">  
+    <div class="card-header">
+      Informações do Usuário
+    </div>
+
+    <div class="card-body">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" class="form-control" formControlName="nome" >
+          <div class="text-danger" *ngIf="usuarioForm.get('nome').invalid && usuarioForm.get('nome').touched">
+            <div *ngIf="usuarioForm.get('nome').errors.required"> Campo Obrigatório. </div>
+            <div *ngIf="usuarioForm.get('nome').errors.minlenght"> Campo deve ter no mínimo 20 caracteres. </div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-8">
+          <label for="email">Email</label>
+          <input type="text" id="email" class="form-control" formControlName="email">
+          <div class="text-danger" *ngIf="usuarioForm.get('email').invalid && usuarioForm.get('nome').touched">
+            <div *ngIf="usuarioForm.get('email').errors.required"> Campo Obrigatório. </div>
+            <div *ngIf="usuarioForm.get('email').errors.minlenght"> Campo deve ter no mínimo 20 caracteres. </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-lg float-right mt-3" [disabled]="this.submittingForm || this.usuarioForm.invalid" >Salvar</button>
+</form>
