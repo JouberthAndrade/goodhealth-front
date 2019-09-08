@@ -31,7 +31,7 @@
       </td>
       <td>
         <a [routerLink]="[item.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
-        <a  class="btn btn-outline-danger btn-sm">Excluir</a>
+        <a (click)="delete(item)" class="btn btn-outline-danger btn-sm">Excluir</a>
       </td>
     </tr>
     

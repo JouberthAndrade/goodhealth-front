@@ -18,4 +18,14 @@ export class ListaEmpresaComponent implements OnInit {
      this.model = retorno.items;
   }
 
+    delete(empresa: Empresa) {
+      const isDelete = confirm('Deseja deletar o usuário?');
+
+      if(isDelete)  {
+        this.empresaService.Delete(empresa.id).then(
+          () => this.model = this.model.filter(element => element != empresa)
+        );
+      }
+  }
+
 }

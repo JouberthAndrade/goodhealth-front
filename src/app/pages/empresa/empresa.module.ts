@@ -4,12 +4,12 @@ import { ReactiveFormsModule} from '@angular/forms';
 
 import { EmpresaRoutingModule } from './empresa-rouding.module';
 import { ListaEmpresaComponent } from './lista-empresa/lista-empresa.component';
-//import { UsuariosFormComponent } from './usuarios-form/usuarios-form.component';
+import { EmpresaFormComponent } from './empresa-form/empresa-form.component';
 
 import {EmpresaService} from './service/empresa.service';
 
 @NgModule({
-  declarations: [ListaEmpresaComponent],
+  declarations: [ListaEmpresaComponent, EmpresaFormComponent],
   imports: [
     CommonModule,
     EmpresaRoutingModule,

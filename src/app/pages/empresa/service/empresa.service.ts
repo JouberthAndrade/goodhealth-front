@@ -22,4 +22,16 @@ export class EmpresaService extends AppService<Empresa> {
     async GetAll(): Promise<any> {
         return await this.getAsync<any>(`Empresa`);
     }
+
+    async Save(empresa: Empresa) : Promise<any> {
+        return this.postPathUrlAsync(environment.baseUrl + 'Empresa', empresa);
+    }
+
+    async Update(empresa: Empresa) {
+        return this.postPathUrlAsync(environment.baseUrl + 'Empresa', empresa);
+    }
+
+    async Delete(id: string): Promise<any>{
+        return await this.deleteAsync(`Empresa/${id}`);
+    }
 }

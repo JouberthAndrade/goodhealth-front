@@ -53,7 +53,7 @@ export class UsuariosFormComponent implements OnInit, AfterContentChecked {
       this.pageTitle = 'Cadastro de Novo Usuário';
     else {
       const nomeUsuario = this.usuario.nome || "";
-      this.pageTitle = 'Editando Usuário:' + nomeUsuario;
+      this.pageTitle = 'Editando: ' + nomeUsuario;
     }
       
   }
