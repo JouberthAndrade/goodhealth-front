@@ -42,7 +42,14 @@
             <div *ngIf="usuarioForm.get('email').errors.minlenght"> Campo deve ter no mínimo 20 caracteres. </div>
           </div>
         </div>
-
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="idEmpresa">Empresa:</label>
+          <select name="idEmpresa" id="idEmpresa" formControlName="idEmpresa" class="form-control" (change)="selectItem($event)" [(ngModel)]="empresaSelect" >
+            <option *ngFor="let option of empresas" [value]="option.id"> {{option.nome}} </option>
+          </select>
+        </div>
       </div>
     </div>
   </div>

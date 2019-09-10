@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from '../model/usuarios.model';
 import { element } from '@angular/core/src/render3';
+import { UsuarioDto } from '../model/usuarioDto.model';
 
 @Component({
   selector: 'app-lista-usuarios',
@@ -10,7 +11,7 @@ import { element } from '@angular/core/src/render3';
 })
 export class ListaUsuariosComponent implements OnInit {
 
-  model: Usuario[] = [];
+  model: UsuarioDto[] = [];
 
   constructor(private usuarioService: UsuarioService) { }
 
@@ -24,7 +25,7 @@ export class ListaUsuariosComponent implements OnInit {
 
       if(isDelete)  {
         this.usuarioService.Delete(usuario.id).then(
-          () => this.model = this.model.filter(element => element != usuario)
+          () => this.model = this.model.filter(element => element.id != usuario.id)
         );
       }
   }

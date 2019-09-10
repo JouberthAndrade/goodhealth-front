@@ -4,9 +4,11 @@ import { ActivatedRoute, Router} from '@angular/router';
 
 import { Usuario } from '../model/usuarios.model';
 import { UsuarioService } from '../service/usuario.service';
+import { EmpresaService } from '../../empresa/service/empresa.service';
 
 import { switchMap } from 'rxjs/operators';
 import toastr from 'toastr';
+import { Empresa } from '../../empresa/model/empresa.model';
 
 @Component({
   selector: 'app-usuarios-form',
@@ -21,19 +23,24 @@ export class UsuariosFormComponent implements OnInit, AfterContentChecked {
   serverErroMessages: string[] = null;
   submittingForm: boolean = false;
   usuario: Usuario = new Usuario();
+  empresas: Empresa[] = [];
+  empresaSelect: string;
 
   constructor(
     private usuarioService: UsuarioService,
+    private empresaService: EmpresaService,
     private route: ActivatedRoute,
     private router: Router,
     private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
+    this.loadEmpresas();
     this.setCurrentAction();
     this.buildUsuario();
     this.loadUsuario();
 
+    
   }
 
   ngAfterContentChecked(): void {
@@ -58,6 +65,13 @@ export class UsuariosFormComponent implements OnInit, AfterContentChecked {
       
   }
 
+  private async loadEmpresas() {
+     await this.empresaService.GetAll().then( x => {
+        this.empresas = x.items;
+    });
+    
+  }
+
   private loadUsuario() {
     if(this.currentAction == 'edit') {
       this.route.paramMap.pipe(
@@ -67,6 +81,9 @@ export class UsuariosFormComponent implements OnInit, AfterContentChecked {
         (usuario) => {
           this.usuario = usuario;
           this.usuarioForm.patchValue(this.usuario); // bind usuario from service;
+          this.empresaSelect = this.usuario.empresa.id;
+          console.log('this.usuario: ', this.usuario);
+          console.log('this.empresaSelect: ', this.empresaSelect);
         },
         (error) => alert('Erro')
       )
@@ -76,8 +93,9 @@ export class UsuariosFormComponent implements OnInit, AfterContentChecked {
   private buildUsuario() {
     this.usuarioForm = this.formBuilder.group({
         id: [null],
-        nome: [null, [Validators.required, Validators.minLength(10)]],
-        email: [null, [Validators.required, Validators.minLength(10)]]
+        nome: [null, [Validators.required, Validators.minLength(5)]],
+        email: [null, [Validators.required, Validators.minLength(5)]],
+        idEmpresa: [null, [Validators.required]]
     });
   }
 
@@ -87,15 +105,18 @@ export class UsuariosFormComponent implements OnInit, AfterContentChecked {
 
   private createUsuario() {
     const usuario: Usuario = Object.assign(new Usuario(), this.usuarioForm.value);
+    usuario.idEmpresa = this.empresaSelect;
     this.usuarioService.Save(usuario)
       .then(
         usuario => this.actionsForSuccess(usuario.data),
         error => this.actionForError(error)
       )
   }
+
   private updateUsuario() {
     const usuario: Usuario = Object.assign(new Usuario(), this.usuarioForm.value);
     usuario.id = this.usuario.id;
+    usuario.idEmpresa = this.empresaSelect;
     this.usuarioService.Update(usuario)
       .then(
         usuario => this.actionsForSuccess(usuario),
@@ -123,6 +144,13 @@ export class UsuariosFormComponent implements OnInit, AfterContentChecked {
     )
   }
   
+  public selectItem(event: any) {
+    //console.log('empresaSelect: ', this.empresaSelect);
+    //this.empresaSelect = event;
+    //console.log('event: ', event);
+    //console.log('empresaSelect: ', this.empresaSelect);
+    
+  }
 
   
 

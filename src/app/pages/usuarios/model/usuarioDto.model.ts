@@ -1,6 +1,4 @@
-import { Empresa } from '../../empresa/model/empresa.model';
-
-export class Usuario {
+export class UsuarioDto {
     constructor(
         
     ) {}
@@ -10,6 +8,5 @@ export class Usuario {
     public telefone: string;
     public ativo: string; 
 
-    public empresa: Empresa;
-    public idEmpresa: string;
+    public nomeEmpresa: string;
 }
