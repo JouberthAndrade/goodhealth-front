@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from '../model/usuarios.model';
-import { element } from '@angular/core/src/render3';
+import toastr from 'toastr';
 import { UsuarioDto } from '../model/usuarioDto.model';
 
 @Component({
@@ -27,6 +27,7 @@ export class ListaUsuariosComponent implements OnInit {
         this.usuarioService.Delete(usuario.id).then(
           () => this.model = this.model.filter(element => element.id != usuario.id)
         );
+        toastr.success("Usuário deletado com sucesso!");
       }
   }
 

@@ -1,10 +1,14 @@
 import { Empresa } from '../../empresa/model/empresa.model';
+import { BaseModel } from '../../../shared/models/base-model';
 
-export class Usuario {
+export class Usuario extends BaseModel  {
     constructor(
         
-    ) {}
-    public id: string;
+    ) {
+        super();
+    }
+
+    //public id: string;
     public nome: string;
     public email: string;
     public telefone: string;

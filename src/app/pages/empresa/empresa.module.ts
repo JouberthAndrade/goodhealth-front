@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule} from '@angular/forms';
+import {SharedModule} from '../../shared/shared.module';
+
 
 import { EmpresaRoutingModule } from './empresa-rouding.module';
 import { ListaEmpresaComponent } from './lista-empresa/lista-empresa.component';
@@ -11,9 +11,8 @@ import {EmpresaService} from './service/empresa.service';
 @NgModule({
   declarations: [ListaEmpresaComponent, EmpresaFormComponent],
   imports: [
-    CommonModule,
-    EmpresaRoutingModule,
-    ReactiveFormsModule
+    SharedModule,
+    EmpresaRoutingModule
   ],
   providers: [
       EmpresaService,

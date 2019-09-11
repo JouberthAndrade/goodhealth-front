@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule} from '@angular/forms';
+import {SharedModule} from '../../shared/shared.module';
 
 import { UsuariosRoutingModule } from './usuarios-routing.module';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
@@ -11,9 +10,8 @@ import {UsuarioService} from './service/usuario.service';
 @NgModule({
   declarations: [ListaUsuariosComponent, UsuariosFormComponent],
   imports: [
-    CommonModule,
-    UsuariosRoutingModule,
-    ReactiveFormsModule
+    SharedModule,
+    UsuariosRoutingModule
   ],
   providers: [
       UsuarioService,
