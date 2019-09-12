@@ -9,6 +9,6 @@ import { BaseService } from 'src/app/shared/services/base-service.service';
 export class EmpresaService extends BaseService<Empresa> {
 
     constructor(protected injector: Injector) {
-        super(environment.baseUrl + 'Empresa', injector);
+        super(environment.baseUrl + 'Empresa', injector, Empresa.fromJson);
     }
 }

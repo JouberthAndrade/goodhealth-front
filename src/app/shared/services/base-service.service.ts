@@ -6,7 +6,10 @@ import { ValidationResultModel, NotificationType } from '../../models/validation
 export abstract class BaseService <T extends BaseModel> {
     protected http: HttpClient;
     protected headers: HttpHeaders;
-    constructor(protected apiPath: string, protected injector: Injector) {
+    constructor(protected apiPath: string, 
+                protected injector: Injector,
+                protected jsonDataToResource: (jsonData: any) => T
+    ) {
         this.http = injector.get(HttpClient);
         this.headers = this.setHeaders();
     }

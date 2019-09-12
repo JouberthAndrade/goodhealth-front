@@ -16,4 +16,9 @@ export class Usuario extends BaseModel  {
 
     public empresa: Empresa;
     public idEmpresa: string;
+
+
+    static fromJson(jsonData: any): Usuario {
+        return Object.assign(new Usuario(), jsonData);
+    }
 }
