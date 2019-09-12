@@ -31,10 +31,14 @@
         <strong>{{item.nome}}</strong> <br>
         <small>{{item.email}}</small>
       </td>
-      <td>{{item.nomeEmpresa}}</td>
+      <td>
+        <span *ngIf="item.empresa">
+          {{item.empresa.nome}}
+        </span>
+      </td>
       <td>
         <a [routerLink]="[item.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
-        <a (click)="deleteUser(item)" class="btn btn-outline-danger btn-sm">Excluir</a>
+        <a (click)="delete(item)" class="btn btn-outline-danger btn-sm">Excluir</a>
       </td>
     </tr>
     

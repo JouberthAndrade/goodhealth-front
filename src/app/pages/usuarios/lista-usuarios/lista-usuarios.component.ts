@@ -1,35 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from '../model/usuarios.model';
-import toastr from 'toastr';
 import { UsuarioDto } from '../model/usuarioDto.model';
+
+import { BaseListComponent } from '../../../shared/components/base-list/base-list.component';
 
 @Component({
   selector: 'app-lista-usuarios',
   templateUrl: './lista-usuarios.component.html',
   styleUrls: ['./lista-usuarios.component.css']
 })
-export class ListaUsuariosComponent implements OnInit {
+export class ListaUsuariosComponent extends BaseListComponent<Usuario> {
 
-  model: UsuarioDto[] = [];
-
-  constructor(private usuarioService: UsuarioService) { }
-
-  async ngOnInit() {
-      let retorno = await this.usuarioService.GetAll();
-      this.model = retorno.items;
+  constructor(protected usuarioService: UsuarioService) { 
+    super(usuarioService);
   }
-
-  deleteUser(usuario: Usuario) {
-      const isDelete = confirm('Deseja deletar o usuário?');
-
-      if(isDelete)  {
-        this.usuarioService.Delete(usuario.id).then(
-          () => this.model = this.model.filter(element => element.id != usuario.id)
-        );
-        toastr.success("Usuário deletado com sucesso!");
-      }
-  }
-
 
 }
