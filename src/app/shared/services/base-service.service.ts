@@ -85,7 +85,7 @@ export abstract class BaseService <T extends BaseModel> {
         return true;
     }
 
-    private async ResultAsync<TModel>(methodName: string, showError: boolean): Promise<TModel> {
+    public async ResultAsync<TModel>(methodName: string, showError: boolean): Promise<TModel> {
         const result = await this.http
             .get<ValidationResultModel<TModel>>(methodName, {
                 headers: this.headers
@@ -93,7 +93,6 @@ export abstract class BaseService <T extends BaseModel> {
             .toPromise();
 
         this.validateNotifications(result);
-
         return result.result;
     }
 

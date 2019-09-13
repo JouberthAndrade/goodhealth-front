@@ -34,10 +34,10 @@
         <label for="ano">Ano</label>
         <select #ano name="ano" id="ano" class="form-control">
           <option value="">Selecione o ano</option>
-          <option value="18">2018</option>
-          <option value="19">2019</option>
-          <option value="20">2020</option>
-          <option value="21">2021</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
         </select>
       </div>
     </div>
@@ -67,11 +67,11 @@
 
   <div class="card text-center text-white bg-info">
       <div class="card-header">
-        Quantidade de usuários
+        Quantidade de novos usuários
       </div>
       <div class="card-body">
         <h3 class="card-title">
-          25
+          {{totalUsuario}}
         </h3>
       </div>
   </div>
@@ -82,7 +82,7 @@
       </div>
       <div class="card-body">
         <h3 class="card-title">
-          3
+          {{totalInativo}}
         </h3>
       </div>
   </div>
@@ -91,8 +91,12 @@
 <hr>
 
 <div class="row mt-5 mb-4">
-  <div class="col-md-6">Receitas</div>
-  <div class="col-md-6">Usuários</div>
+  <div class="col-md-6">
+    
+  </div>
+  <div class="col-md-6">
+    <p-chart type="bar" [data]="usuarioChartData" [options]="chartOptions"></p-chart>
+  </div>
 </div>
 
 

@@ -13,9 +13,11 @@ export class Usuario extends BaseModel  {
     public email: string;
     public telefone: string;
     public ativo: string; 
+    public dataCadastro: string;
 
     public empresa: Empresa;
     public idEmpresa: string;
+    public nomeEmpresa: string;
 
 
     static fromJson(jsonData: any): Usuario {
