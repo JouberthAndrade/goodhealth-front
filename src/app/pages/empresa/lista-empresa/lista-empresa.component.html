@@ -1,20 +1,6 @@
-<nav class="mb-5">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-    <li class="breadcrumb-item active">Empresa</li>
-  </ol>
-</nav>
+<app-bread-crumb [items]="[{text: 'Empresa'}]" ></app-bread-crumb>
 
-<div class="row mb-3">
-  <div class="col-md">
-    <h1 class="h2 border-left pl-2">
-      Empresas
-    </h1>
-  </div>
-  <div class="col-md">
-    <a routerLink="new" class="btn btn-success float-right">+ Novo Empresa</a>
-  </div>
-</div>
+<app-page-header page-title="Empresas" button-text="+ Novo Empresa" button-class="btn-success" button-link="new" ></app-page-header>
 
 <table class="table table-hover">
   <thead>

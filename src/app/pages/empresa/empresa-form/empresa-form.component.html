@@ -1,26 +1,11 @@
-<nav class="mb-5">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-    <li class="breadcrumb-item"><a routerLink="/empresas">Empresa</a></li>
-    <li class="breadcrumb-item active">Form</li>
-  </ol>
-</nav>
+<app-bread-crumb [items]="[{text: 'Empresa', link: '/empresas'}, {text: pageTitle}]" ></app-bread-crumb>
 
-<div class="row mb-3">
-  <div class="col-md">
-    <h1 class="h2 border-left pl-2">
-      {{pageTitle}}
-    </h1>
-  </div>
-  <div class="col-md">
-    <a routerLink="/empresas" class="btn btn-light float-right"> << Voltar </a>
-  </div>
-</div>
+<app-page-header [page-title]="pageTitle" button-text="<< Voltar" button-class="btn-light" button-link="/empresas" ></app-page-header>
 
 <form [formGroup]="baseForm" (submit)='submitForm()'>
   <div class="card">  
     <div class="card-header">
-      Informações do Usuário
+      Informações da Empresa
     </div>
 
     <div class="card-body">
