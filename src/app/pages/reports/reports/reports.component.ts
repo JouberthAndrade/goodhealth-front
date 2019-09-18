@@ -75,11 +75,11 @@ export class ReportsComponent implements OnInit {
 
   private getChartData(title: string, color: string) {
     const chartData = [];
-    const group = this.groupBy(this.usuarios.filter(x => x.ativo), 'nomeEmpresa');
+    const group =  this.groupBy2(this.usuarios.filter(x => x.ativo));
     group.forEach((grupo, i) => {
-      let filter: Usuario[] = grupo;
+      let filter: Usuario[] = grupo.users;
       chartData.push({
-        label:  filter[0].nomeEmpresa,
+        label:  grupo.empresa,
         total: filter.length   
       });
 
@@ -95,9 +95,15 @@ export class ReportsComponent implements OnInit {
     }
   }
 
-  private groupBy(arr, prop) : any[] {
-    const map = new Map(Array.from(arr, obj => [obj[prop], []]));
-    arr.forEach(obj => map.get(obj[prop]).push(obj));
-    return Array.from(map.values());
+  private groupBy2(myArray: Usuario[]) : any[] {
+    const group_values = myArray.reduce(function (obj, item) {
+                      obj[item.nomeEmpresa] = obj[item.nomeEmpresa] || [];
+                      obj[item.nomeEmpresa].push(item);
+                      return obj;
+                  }, {});
+    const groups = Object.keys(group_values).map(function (key) {
+        return {empresa: key, users: group_values[key]};
+    });
+    return groups;
   }
 }
