@@ -6,6 +6,9 @@ import { UsuarioService } from '../../usuarios/service/usuario.service';
 import currencyFormatter from 'currency-formatter';
 import { tick } from '@angular/core/src/render3';
 import { Usuario } from '../../usuarios/model/usuarios.model';
+import { ProdutoDiaDto } from '../model/ProdutoDiaDto.model';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-reports',
@@ -17,9 +20,11 @@ export class ReportsComponent implements OnInit {
   totalUsuario: any = 0;
   totalInativo: any = 0;
   valorMes: any = 0;
+  isConsultaDia: boolean = true;
 
   usuarioChartData: any;
   valoresChartData: any;
+  titleProdutosDia: string = "Produtos do dia " + moment().format("DD/MM/YYYY") + ' - ' + moment().locale('pt-br').format('dddd');
 
   chartOptions = {
     scales: {
@@ -32,6 +37,7 @@ export class ReportsComponent implements OnInit {
   }
 
   usuarios: Usuario[] = [];
+  cardProdutosDia: ProdutoDiaDto[] = [];
 
   @ViewChild('mes') mes: ElementRef = null;
   @ViewChild('ano') ano: ElementRef = null;
@@ -41,8 +47,13 @@ export class ReportsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    const data = moment().format("YYYY-MM-DD HH:mm:ss");
+
     this.usuarioService.GetAll()
     .then(usuarios => this.usuarios = usuarios);
+
+    this.usuarioService.GetProdutoDia(data)
+    .then(cards => this.cardProdutosDia = cards);
 
 
 

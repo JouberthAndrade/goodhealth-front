@@ -52,8 +52,31 @@
     
   </div>
 </div>
+<br />
+<div *ngIf="isConsultaDia">
+  <app-page-header 
+    [page-title]="titleProdutosDia" [show-button]="false" >
+  </app-page-header>
 
-<div class="card-deck mt-5 mb-5">
+  <div class="card-deck mt-5 mb-5"  >
+  <div class="card text-center text-white" [ngClass]="{ 'bg-success': item.classe == 'bg-success',
+                                                        'bg-warning': item.classe == 'bg-warning',
+                                                        'bg-danger': item.classe == 'bg-danger',
+                                                        'bg-primary': item.classe == 'bg-primary'}"  *ngFor="let item of cardProdutosDia" >
+      <div class="card-header">
+        {{item.nomeProduto}}
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">
+          {{item.qtdDiaProduto}}
+        </h3>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<div class="card-deck mt-5 mb-5" *ngIf="!isConsultaDia" >
   <div class="card text-center text-white bg-success">
       <div class="card-header">
         Valor do mês
@@ -86,17 +109,20 @@
         </h3>
       </div>
   </div>
+
+  <hr>
+
+  <div class="row mt-5 mb-4">
+    <div class="col-md-6">
+      
+    </div>
+    <div class="col-md-6">
+      <p-chart type="bar" [data]="usuarioChartData" [options]="chartOptions"></p-chart>
+    </div>
+  </div>
+
 </div>
 
-<hr>
 
-<div class="row mt-5 mb-4">
-  <div class="col-md-6">
-    
-  </div>
-  <div class="col-md-6">
-    <p-chart type="bar" [data]="usuarioChartData" [options]="chartOptions"></p-chart>
-  </div>
-</div>
 
 

@@ -23,6 +23,13 @@ export class UsuarioService extends BaseService<Usuario> {
         return this.ResultAsync<Usuario>(url, true);
     }
 
+    async GetProdutoDia(data: any): Promise<any> {
+        const apiUrl = environment.baseUrl + 'Painel';
+        const url =  `${apiUrl}/${data}`;
+        return this.ResultAsync<Usuario>(url, true);
+
+    }
+
 
 }
 

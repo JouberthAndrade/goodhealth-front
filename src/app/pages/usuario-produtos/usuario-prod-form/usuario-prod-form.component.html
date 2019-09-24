@@ -1,5 +1,47 @@
 <app-bread-crumb [items]="[{text: 'Associar Produtos'}]" ></app-bread-crumb>
 
 
+<app-page-header page-title="Associação de novo produto" button-text="<< Voltar" button-class="btn-light" button-link="/usuario-produtos" ></app-page-header>
 
 
+<form [formGroup]="baseForm" (submit)='submitForm()'>
+  <div class="card">  
+    <div class="card-header">
+      Informações do Usuário
+    </div>
+
+    <div class="card-body">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nome">Usuário</label>
+          <select name="idUsuario" id="idUsuario" formControlName="idUsuario" class="form-control" [(ngModel)]="usuarioSelect" >
+            <option *ngFor="let option of usuarios" [value]="option.id"> {{option.nome}} -  {{option.nomeEmpresa}}  </option>
+          </select>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="email">Produto</label>
+          <select name="idProduto" id="idProduto" formControlName="idProduto" class="form-control" [(ngModel)]="produtoSelect" >
+            <option *ngFor="let option of produtos" [value]="option.id"> {{option.descricao}} </option>
+          </select>
+        </div>
+      </div>
+       <div class="form-row">
+        <div class="form-group col-md-1">
+          <label for="quantidade">Qtde:</label>
+          <input type="text" id="quantidade" class="form-control" formControlName="quantidade">
+        </div> 
+        <div class="form-group col-md-2">
+          <label for="dataInicio">Data Início:</label>
+          <input type="text" id="dataInicio" class="form-control" formControlName="dataInicio">
+        </div> 
+        <div class="form-group col-md-2" *ngIf="this.currentAction == 'edit'" >
+          <label for="dataFim">Data Fim:</label>
+          <input type="text" id="dataFim" class="form-control" formControlName="dataFim">
+        </div> 
+       </div>
+    </div>
+  </div>
+  
+  <button type="submit" class="btn btn-primary btn-lg float-right mt-3" [disabled]="this.submittingForm || this.baseForm.invalid" >Salvar</button>
+</form>
