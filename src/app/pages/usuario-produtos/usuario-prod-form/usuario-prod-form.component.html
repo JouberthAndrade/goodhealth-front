@@ -29,19 +29,52 @@
        <div class="form-row">
         <div class="form-group col-md-1">
           <label for="quantidade">Qtde:</label>
+         
           <input type="text" id="quantidade" class="form-control" formControlName="quantidade">
         </div> 
         <div class="form-group col-md-2">
           <label for="dataInicio">Data Início:</label>
-          <input type="text" id="dataInicio" class="form-control" formControlName="dataInicio">
+           <p-calendar id="dataInicio" formControlName="dataInicio" 
+              inputStyleClass="form-control"
+              dataType="string" 
+              dateFormat="dd/mm/yy"
+              [locale]="ptBR"
+              [showButtonBar]="true" >
+          </p-calendar>
+          
         </div> 
         <div class="form-group col-md-2" *ngIf="this.currentAction == 'edit'" >
           <label for="dataFim">Data Fim:</label>
-          <input type="text" id="dataFim" class="form-control" formControlName="dataFim">
+          <p-calendar id="dataFim" formControlName="dataFim" 
+              inputStyleClass="form-control"
+              dataType="string" 
+              dateFormat="dd/mm/yyyy"
+              [locale]="ptBR"
+              [showButtonBar]="true" >
+          </p-calendar>
         </div> 
        </div>
     </div>
   </div>
   
+<table class="table table-hover">
+  <thead>
+    <tr class="bg-success text-light">
+      <th>Produto</th>
+      <th>Valor R$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of resource.produtos" >
+      <td>
+        {{item.descricao}}
+      </td>
+      <td>{{item.valor}}</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
   <button type="submit" class="btn btn-primary btn-lg float-right mt-3" [disabled]="this.submittingForm || this.baseForm.invalid" >Salvar</button>
 </form>

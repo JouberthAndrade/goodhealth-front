@@ -7,11 +7,17 @@ import { UsuarioProdFormComponent } from './usuario-prod-form/usuario-prod-form.
 import { UsuarioProdutoService } from './service/usuario-prod.service';
 import { ListaUsuarioProdComponent } from './lista-usuario-prod/lista-usuario-prod.component';
 
+import { CalendarModule } from 'primeng/calendar';
+import { IMaskModule } from 'angular-imask';
+
+
 @NgModule({
   declarations: [UsuarioProdFormComponent, ListaUsuarioProdComponent],
   imports: [
     SharedModule,
-    UsuarioProdutosRoutingModule
+    UsuarioProdutosRoutingModule,
+    CalendarModule,
+    IMaskModule
   ],
   providers: [
       UsuarioProdutoService,

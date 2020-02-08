@@ -14,6 +14,9 @@ import { BaseFormComponent } from '../../../shared/components/base-form/base-for
   styleUrls: ['./usuarios-form.component.css']
 })
 export class UsuariosFormComponent extends BaseFormComponent<Usuario> implements OnInit {
+  protected afterResourceLoad(): void {
+    throw new Error("Method not implemented.");
+  }
 
 
   usuario: Usuario = new Usuario();

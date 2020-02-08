@@ -80,8 +80,10 @@ export abstract class BaseFormComponent<T extends BaseModel> implements OnInit, 
       )
       .subscribe(
         (resource) => {
+          console.log('RESOURCE:', resource);
           this.resource = resource;
           this.baseForm.patchValue(resource); 
+          this.afterResourceLoad();
         },
         (error) => alert('Erro')
       )
@@ -132,5 +134,7 @@ export abstract class BaseFormComponent<T extends BaseModel> implements OnInit, 
   }
 
   protected abstract buildResourceForm(): void;
+
+  protected abstract afterResourceLoad():void;
 
 }

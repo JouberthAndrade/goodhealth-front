@@ -12,6 +12,7 @@ export class Produto extends BaseModel  {
     public dataInicio: Date;
     public dataFim?: Date;
     public flagDia: string;
+    public diaSemana: string;
 
     static fromJson(jsonData: any): Produto {
         return Object.assign(new Produto(), jsonData);

@@ -1,5 +1,8 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import br from '@angular/common/locales/pt';
 
 import { CoreModule } from './core/core.module';
@@ -14,6 +17,8 @@ registerLocaleData(br);
     AppComponent
   ],
   imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule
   ],

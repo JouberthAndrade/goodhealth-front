@@ -12,6 +12,9 @@ import { EmpresaService } from '../service/empresa.service';
   styleUrls: ['./empresa-form.component.css']
 })
 export class EmpresaFormComponent extends BaseFormComponent<Empresa> {
+  protected afterResourceLoad(): void {
+    throw new Error("Method not implemented.");
+  }
 
 
   empresa: Empresa = new Empresa();
