@@ -1,6 +1,6 @@
 import { Injectable, Injector } from '@angular/core';
 import { Usuario } from '../model/usuarios.model';
-import environment from '../../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import { BaseService } from 'src/app/shared/services/base-service.service';
 
 import { map } from 'rxjs/operators';

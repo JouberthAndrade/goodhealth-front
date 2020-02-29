@@ -3,13 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "serve": "ts-node tasks/generate-appsettings.ts && node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve",
+    "start": "ts-node tasks/generate-appsettings.ts true && node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng build --prod --output-hashing=all && node generate-sw.js && cd dist && http-server -p 5456",
+    "build": "ts-node tasks/generate-appsettings.ts true && node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng build --prod --output-hashing=all && node generate-sw.js",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "prod-build-dev": "ng build --prod --build-optimizer",
-    "prod-build-staging": "ng build --prod --configuration=staging --build-optimizer"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {

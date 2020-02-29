@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpParams, HttpClient } from '@angular/common/http';
-import environment from '../environments/environment';
+import { environment } from '../environments/environment';
 import { ValidationResultModel, NotificationType } from './models/validations/validation-result.model';
 
 @Injectable()

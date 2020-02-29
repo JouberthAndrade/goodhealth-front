@@ -1,5 +1,5 @@
 import { Injectable, Injector } from '@angular/core';
-import environment from '../../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import { Empresa } from '../model/empresa.model';
 import { BaseService } from 'src/app/shared/services/base-service.service';
 
