@@ -63,11 +63,11 @@ export class UsuarioProdFormComponent extends BaseFormComponent<UsuarioProduto> 
         this.usuarios = x.items;
     });
 
-   /* 
+   
     await this.produtoService.GetAll().then( x => {
         this.produtos = x.items;
     });
-*/
+
   }
 
   afterResourceLoad(){
