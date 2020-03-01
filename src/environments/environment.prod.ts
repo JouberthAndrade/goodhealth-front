@@ -10,7 +10,7 @@ export const environment = {
     databaseVersion: 1,
     production: false,
     versionBase: 'v1/',
-    baseUrl: 'http://localhost:5101/api/',
+    baseUrl: 'https://goodhealthapp.azurewebsites.net/api/',
     instrumentationKey: '',
     devAuthUrl: "http://localhost:5009/connect/dev-token",
     clientSettings: new ClientSettings(),
