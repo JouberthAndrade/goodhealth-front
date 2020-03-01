@@ -1,5 +1,5 @@
-import envProd from '../src/environments/environment.prod'
-import env from '../src/environments/environment'
+import envProd from '../src/environments/environment.prod';
+import env from '../src/environments/environment';
 import * as fs from 'fs';
 
 var production: boolean = false;

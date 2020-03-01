@@ -5,7 +5,7 @@
     "ng": "ng",
     "serve": "ts-node tasks/generate-appsettings.ts && node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve",
     "start": "ts-node tasks/generate-appsettings.ts true && node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng build --prod --output-hashing=all && node generate-sw.js && cd dist && http-server -p 5456",
-    "build": "ts-node tasks/generate-appsettings.ts true && node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng build --prod --output-hashing=all && node generate-sw.js",
+    "build": "ts-node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng build --prod --output-hashing=all",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

@@ -1,0 +1,254 @@
+
+@font-face {
+    font-family: 'unimed_sansbook_italic';
+    src: url('unimedsans-bookitalic-webfont.woff2') format('woff2'),
+         url('unimedsans-bookitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'unimed_sansextrabold';
+    src: url('unimedsans-extrabold-webfont.woff2') format('woff2'),
+         url('unimedsans-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'unimed_sansextrabold_italic';
+    src: url('unimedsans-extrabolditalic-webfont.woff2') format('woff2'),
+         url('unimedsans-extrabolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'unimed_sanslight';
+    src: url('unimedsans-light-webfont.woff2') format('woff2'),
+         url('unimedsans-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'unimed_sanslight_italic';
+    src: url('unimedsans-lightitalic-webfont.woff2') format('woff2'),
+         url('unimedsans-lightitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'unimed_sansregular';
+    src: url('unimedsans-regular-webfont.woff2') format('woff2'),
+         url('unimedsans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'unimed_sansitalic';
+    src: url('unimedsans-regularitalic-webfont.woff2') format('woff2'),
+         url('unimedsans-regularitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'unimed_sanssemibold';
+    src: url('unimedsans-semibold-webfont.woff2') format('woff2'),
+         url('unimedsans-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'unimed_sanssemibold_italic';
+    src: url('unimedsans-semibolditalic-webfont.woff2') format('woff2'),
+         url('unimedsans-semibolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'unimed_slabblack';
+    src: url('unimedslab-black-webfont.woff2') format('woff2'),
+         url('unimedslab-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'unimed_sanssemibold_italic';
+    src: url('unimedsans-semibolditalic-webfont.woff2') format('woff2'),
+         url('unimedsans-semibolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'unimed_slabblack';
+    src: url('unimedslab-black-webfont.woff2') format('woff2'),
+         url('unimedslab-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'unimed_slabblack_italic';
+    src: url('unimedslab-blackitalic-webfont.woff2') format('woff2'),
+         url('unimedslab-blackitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'unimed_slabbold';
+    src: url('unimedslab-bold-webfont.woff2') format('woff2'),
+         url('unimedslab-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'unimed_slabbold_italic';
+    src: url('unimedslab-bolditalic-webfont.woff2') format('woff2'),
+         url('unimedslab-bolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'unimed_slablight_italic';
+    src: url('unimedslab-lightitalic-webfont.woff2') format('woff2'),
+         url('unimedslab-lightitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'unimed_slabregular';
+    src: url('unimedslab-regular-webfont.woff2') format('woff2'),
+         url('unimedslab-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'unimed_slabitalic';
+    src: url('unimedslab-regularitalic-webfont.woff2') format('woff2'),
+         url('unimedslab-regularitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'unimed_slabsemibold';
+    src: url('unimedslab-semibold-webfont.woff2') format('woff2'),
+         url('unimedslab-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'unimed_slabsemibold_italic';
+    src: url('unimedslab-semibolditalic-webfont.woff2') format('woff2'),
+         url('unimedslab-semibolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'unimed_slabbook';
+    src: url('unimedslab-book-webfont.woff2') format('woff2'),
+         url('unimedslab-book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'unimed_slabbook_italic';
+    src: url('unimedslab-bookitalic-webfont.woff2') format('woff2'),
+         url('unimedslab-bookitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'unimed_slabextrabold';
+    src: url('unimedslab-extrabold-webfont.woff2') format('woff2'),
+         url('unimedslab-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'unimed_slabextrabold_italic';
+    src: url('unimedslab-extrabolditalic-webfont.woff2') format('woff2'),
+         url('unimedslab-extrabolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'unimed_slablight';
+    src: url('unimedslab-light-webfont.woff2') format('woff2'),
+         url('unimedslab-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+
+}
+
+
+/* Trebuchet*/
+
+@font-face {
+    font-family: 'Trebuchet MS';
+    src: url('TrebuchetMS-Bold.woff2') format('woff2'),
+        url('TrebuchetMS-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trebuchet MS';
+    src: url('TrebuchetMS-Italic.woff2') format('woff2'),
+        url('TrebuchetMS-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Trebuchet MS';
+    src: url('TrebuchetMS.woff2') format('woff2'),
+        url('TrebuchetMS.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trebuchet MS';
+    src: url('Trebuchet-BoldItalic.woff2') format('woff2'),
+        url('Trebuchet-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
